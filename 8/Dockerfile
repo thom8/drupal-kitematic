@@ -52,8 +52,9 @@ RUN /etc/init.d/mysql start \
     && mkdir -p sites/default/files \
     && chown -R www-data:www-data .
 
-COPY ../start.sh /start.sh
-COPY ../supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN wget https://raw.githubusercontent.com/thom8/drupal-kitematic/master/start.sh -O /start.sh \
+    && chmod +x /start.sh
+RUN wget https://raw.githubusercontent.com/thom8/drupal-kitematic/master/supervisord.conf -O /etc/supervisor/conf.d/supervisord.conf
 RUN mkdir -p /var/run/sshd /var/log/supervisor
 
 EXPOSE 22 80
