@@ -1,7 +1,7 @@
 FROM drupal:7
 
 MAINTAINER Thom Toogood <thomtoogood@gmail.com>
-ENV REFRESHED_AT 2015-08-26
+ENV REFRESHED_AT 2015-09-08
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update && apt-get install -y \
